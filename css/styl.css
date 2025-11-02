@@ -1,0 +1,575 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 1px solid #afafaf93;
+    z-index: 100;
+    background: #000;
+
+}
+header nav{
+    display: flex;
+    justify-content: space-between; /* Assure que les éléments restent sur la même ligne */
+    align-items: center;
+    width: 85%;
+    margin: auto;
+    height: 80px;
+    flex-wrap: wrap; /* Permet d'ajuster les éléments sur plusieurs lignes si nécessaire */
+}
+header nav .logo{
+    color: #fff;
+    font-size: 30px;
+    font-weight: bolder;
+}
+header nav .logo span{
+    color: goldenrod;
+}
+header nav .links{
+    display: flex;
+}
+header nav .links li{
+position: relative;
+margin: 0 25px;
+height: 80px;
+line-height: 80px;
+list-style: none;
+}
+header nav .links li::after{
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: goldenrod;
+    transition: 0.3s;
+}
+header nav .links li:hover::after,
+    header nav .links li.active::after {
+    width: 100%;
+}
+header nav .links li a{
+    color :rgb(249, 248, 249);
+    font-size: 17px;
+    
+}
+header nav .social-links {
+    display: flex; /* Afficher les icônes sur une seule ligne */
+    justify-content: flex-start; /* Aligner les icônes à gauche */
+    gap: 15px; /* Espacement entre les icônes */
+    order: -1; /* Placer les icônes avant le menu et le logo */
+    color: goldenrod; /* Couleur des icônes */
+}
+header nav .social-links a i{
+    color: goldenrod; /* Couleur des icônes */
+    font-size: 24px; /* Taille des icônes */
+}
+header nav .social-links a i:hover{
+color: #fff;
+}
+.hero-sec{
+    height: 100vh;
+    background: url(../image/backg.png);
+    background-size: cover;
+    background-position: top;
+    overflow: hidden;
+}
+.hero-sec .contanier{
+    width: 85%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    height: 100%;
+}
+.hero-sec .contanier .div-text{
+    width: 50%;
+}
+.hero-sec .contanier .div-text h1{
+    color: #fff;
+    font-size: 60px;
+    margin-bottom: 10px;
+
+}
+    .hero-sec .contanier .div-text span{
+        font-size: 30px;
+        color: goldenrod;
+}
+.hero-sec .contanier .div-text p{
+    font-size: 18px;
+    color: rgb(241, 240, 236);
+    margin: 10px 0 50px;
+    line-height: 1.5;
+}
+.hero-sec .contanier .div-text .btn{
+color: #fff;
+border: 1px solid goldenrod ;
+background-color: goldenrod;
+padding: 12px 30px ;
+border-radius: 5px;
+}
+.hero-sec .contanier .div-text .btn:hover{
+    background:transparent;
+    transition: 0.6s ;
+}
+.hero-sec .contanier .div-img {
+width: 33%;
+position: absolute;
+bottom: -10px;
+right: 0;
+}
+.hero-sec .contanier .div-img img {
+    width:100% ;
+}
+#btnMenu{
+    display: none;
+}
+/* Contact Section */
+    #contact-section {
+            position: fixed;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90vw;
+            max-width: 500px;
+            height: auto;
+            z-index: 9999;
+            background: #222;
+            padding: 50px 40px 40px 40px;
+            display: none;
+            overflow-y: auto;
+            box-shadow: 0 0 30px #000a;
+            border-radius: 20px;
+    }
+    .contact-container {
+            width: 100%;
+            margin: auto;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+            color: white; /* Couleur de texte en blanc */
+    }
+    .contact-container ul {
+    list-style: none;
+    padding: 0;
+}
+.contact-container li {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: goldenrod;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.contact-container i {
+    color: goldenrod;
+    font-size: 22px;
+}
+/* Formation & Certification Section */
+    #formation-section {
+            position: fixed;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90vw;
+            max-width: 500px;
+            height: auto;
+            z-index: 9999;
+            background: #222;
+            padding: 50px 40px 40px 40px;
+            display: none;
+            overflow-y: auto;
+            box-shadow: 0 0 30px #000a;
+            border-radius: 20px;
+    }
+    .formation-container {
+            width: 100%;
+            margin: auto;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+            color: goldenrod;
+    }
+    .formation-container p {
+            font-size: 18px;
+            color: rgb(241, 240, 236);
+            line-height: 1.5;
+            margin: 20px 0;
+    }
+    @media (min-width: 981px) {
+        #formation-section {
+            max-width: 700px;
+            padding: 70px 60px 60px 60px;
+        }
+        .formation-container p {
+            font-size: 20px;
+        }
+    }
+    @media (max-width: 450px) {
+        #formation-section {
+            max-width: 95vw;
+            padding: 36px 8px 24px 60px;
+            border-radius: 16px;
+        }
+        .formation-container p {
+            font-size: 16px;
+        }
+    }
+    /* Formation & Certification Section - Texte en blanc */
+#formation-section ul li {
+    color: white; /* Texte des formations en blanc */
+    font-size: 18px;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+/* About Me Section */
+#about-section {
+    position: fixed;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90vw;
+    max-width: 500px;
+    height: auto;
+    z-index: 9999;
+    background: #222;
+    padding: 50px 40px 40px 40px;
+    display: none;
+    overflow-y: auto;
+    box-shadow: 0 0 30px #000a;
+    border-radius: 20px;
+}
+
+.about-container {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    color: goldenrod;
+}
+
+.about-container p {
+    font-size: 18px;
+    color: rgb(241, 240, 236);
+    line-height: 1.5;
+    margin: 20px 0;
+}
+
+@media (min-width: 981px) {
+    #about-section {
+        max-width: 700px;
+        padding: 70px 60px 60px 60px;
+    }
+    .about-container p {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 450px) {
+    #about-section {
+        max-width: 95vw;
+        padding: 36px 8px 24px 60px;
+        border-radius: 16px;
+    }
+    .about-container p {
+        font-size: 16px;
+    }
+}
+/* Projects & Experience Section */
+#projects-section {
+    position: fixed;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90vw;
+    max-width: 500px;
+    height: auto;
+    z-index: 9999;
+    background: #222;
+    padding: 50px 40px 40px 40px;
+    display: none;
+    overflow-y: auto;
+    box-shadow: 0 0 30px #000a;
+    border-radius: 20px;
+}
+
+.projects-container {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    color: goldenrod;
+}
+
+.projects-container p {
+    font-size: 18px;
+    color: rgb(241, 240, 236);
+    line-height: 1.5;
+    margin: 20px 0;
+}
+
+@media (min-width: 981px) {
+    #projects-section {
+        max-width: 700px;
+        padding: 70px 60px 60px 60px;
+    }
+    .projects-container p {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 450px) {
+    #projects-section {
+        max-width: 95vw;
+        padding: 36px 8px 24px 60px;
+        border-radius: 16px;
+    }
+    .projects-container p {
+        font-size: 16px;
+    }
+}
+/* Ensure scroll functionality for all sections */
+#about-section, #projects-section, #formation-section, #contact-section {
+    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: 80vh; /* Set maximum height to 80% of the viewport height */
+    position: relative; /* For close button positioning */
+}
+
+/* Overlay backdrop */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9998;
+    display: none;
+}
+
+/* Close button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10000;
+}
+/* responsive */
+@media (max-width : 980px) {
+    header nav .links{
+        position: absolute;
+        top:100%;
+        right: -420px;
+        flex-direction: column;
+        background-color: black;
+        border-left: 1px solid #444444a8;
+        width: 400px;
+        height: 100vh;
+        text-align: center;
+        padding: 20px 0;
+        transition: 0.7s;
+    }
+    header nav .links.active{
+        right: 0;
+    }
+    .social-links{
+        display: none;
+    }
+    #btnMenu{
+        display: block;
+        color: #fff;
+        font-size: 30px;
+    }
+    .hero-sec{
+        height: auto;
+    }
+    .hero-sec .contanier{
+        flex-direction: column;
+    }
+    .hero-sec .contanier .div-text{
+        width: 80%;
+        margin-top: 150px;
+        margin-bottom: 60px;
+        text-align: center;
+    }
+    .hero-sec .contanier .div-img{
+        position: relative;
+        width: 50%;
+    }
+    .hero-sec .contanier .div-text h1{
+        font-size: 50px;
+    }
+        .hero-sec .contanier .div-text span{
+            font-size: 30px;
+           
+    }
+
+}
+@media (max-width : 450px) {
+    .hero-sec .contanier .div-text h1{
+        font-size: 35px;
+    }
+        .hero-sec .contanier .div-text span{
+            font-size: 25px;
+    }
+    .hero-sec .contanier .div-text p{
+        font-size: 16px;
+    }
+    .hero-sec .contanier .div-img{
+        position: relative;
+        width: 70%;
+    }
+}
+/* Uniformisation des styles pour toutes les fenêtres, y compris Contact */
+#contact-section,
+#formation-section,
+#about-section,
+#projects-section {
+    position: fixed;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90vw;
+    max-width: 500px;
+    height: auto;
+    z-index: 9999;
+    background: #222;
+    padding: 50px 40px 40px 40px;
+    display: none;
+    overflow-y: auto;
+    box-shadow: 0 0 30px #000a;
+    border-radius: 20px;
+}
+
+.contact-container,
+.formation-container,
+.about-container,
+.projects-container {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    color: goldenrod;
+}
+
+.contact-container p,
+.formation-container p,
+.about-container p,
+.projects-container p {
+    font-size: 18px;
+    color: rgb(241, 240, 236);
+    line-height: 1.5;
+    margin: 20px 0;
+}
+
+@media (min-width: 981px) {
+    #contact-section,
+    #formation-section,
+    #about-section,
+    #projects-section {
+        max-width: 700px;
+        padding: 70px 60px 60px 60px;
+    }
+    .contact-container p,
+    .formation-container p,
+    .about-container p,
+    .projects-container p {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 450px) {
+    #contact-section,
+    #formation-section,
+    #about-section,
+    #projects-section {
+        max-width: 95vw;
+        padding: 36px 8px 24px 60px;
+        border-radius: 16px;
+    }
+    .contact-container p,
+    .formation-container p,
+    .about-container p,
+    .projects-container p {
+        font-size: 16px;
+    }
+}
+
+#contact-section ul li {
+    /* Couleur de texte en blanc pour toutes les informations */
+    color: white;
+}
+#formation-section h2,
+#contact-section h2 {
+    /* Uniformisation de l'espacement avec About Me */
+    margin-bottom: 20px; /* Même espacement que le titre et le paragraphe de About Me */
+}
+@media (min-width: 981px) {
+    header nav {
+        justify-content: space-between; /* Répartir les éléments sur toute la largeur */
+    }
+
+    header nav .social-links {
+        order: 0; /* Remettre les icônes à leur position d'origine à droite */
+        justify-content: flex-end; /* Aligner les icônes à droite */
+        gap: 15px; /* Espacement entre les icônes */
+    }
+}
+
+/* Center content in all sections */
+#about-section, #projects-section, #formation-section, #contact-section {
+    display: flex; /* Enable flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    text-align: center; /* Center text alignment */
+}
+
+/* Adjust centering for small screens */
+@media (max-width: 768px) {
+    #about-section, #project-section, #formation-section, #contact-section {
+        padding: 10px; /* Add padding for small screens */
+        flex-direction: column; /* Ensure content stacks vertically if needed */
+    }
+    #projects-section, #experience-section {
+        display: flex; /* Enable flexbox */
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        text-align: center; /* Center text alignment */
+        padding: 10px; /* Add padding for small screens */
+        flex-direction: column; /* Ensure content stacks vertically if needed */
+    }
+
+}
+

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>portfolio website</title>
+<!--font-awesome-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<!--file css -->
+<link rel="stylesheet" href="css/styl.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="#" class="logo"><span>TK</span> <code>ZR</code></a>
+        <ul class="links">
+            <li class="active"><a href="#">HOME</a></li>
+            <li><a href="#">About Me</a></li>
+            <li><a href="#">Projects & Experience</a></li>
+            <li><a href="#">Formation & Certification</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/tarek-ziri" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/ziritarek19-hue" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github"></i>
+            </a>
+        </div>
+        <i id="btnMenu" class="fa-solid fa-bars"></i>
+    </nav> 
+</header>
+
+<!-- Overlay backdrop -->
+<div id="overlay"></div>
+
+<div class="hero-sec">
+    <div class="contanier">
+        <div class="div-text">
+            <h1>TAREK ZERI</h1>
+            <span>💻 ERP Consultant | Database & Web/Web3D Developer</span>
+            <p>
+                Passionate about technology and innovation. Skilled in ERP systems (SAP, Sage X3, Silwane),
+                database management (SQL, MySQL), and web development (HTML, CSS, JavaScript).
+                Currently exploring Web3D (Three.js, WebGL) to build immersive interactive 3D experiences
+                integrated into modern websites.
+            </p>
+            <a href="pdf/cv-viewer.html" class="btn" target="_blank">My Curriculum Vitae</a>
+            <a href="web3d-projects/index.html" class="btn" target="_blank">My Web3D Projects</a>
+        </div>
+
+        <div class="div-img">
+            <img src="image/tarek.png" alt="">
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Contact Section (hidden by default) -->
+<section id="contact-section" style="display:none;">
+  <button class="close-btn" aria-label="Close Contact Section">×</button>
+  <div class="contact-container">
+    <h2><i class="fa-solid fa-address-book"></i> Contact</h2>
+    <ul>
+      <li><i class="fa-solid fa-phone"></i> +213 667771828</li>
+      <li><i class="fa-solid fa-envelope"></i> ziri.tarek.19@gmail.com</li>
+      <li><i class="fa-solid fa-envelope"></i> ziri.tarek.20@gmail.com</li>
+      <li><i class="fa-solid fa-envelope"></i> ziri.tarek.19@icloud.com</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Formation & Certification Section -->
+<section id="formation-section" style="display:none;">
+  <button class="close-btn" aria-label="Close Formation Section">×</button>
+  <div class="formation-container">
+    <h2><i class="fa-solid fa-graduation-cap"></i> Formation & Certification</h2>
+    <ul>
+      <li style="color: white;">
+        Bachelor’s Degree in Information Systems by Sétif (UFAS)
+        <a href="https://fsciences.univ-setif.dz/GP_FR/Lincence_Informatique.html" target="_blank" rel="noopener noreferrer" class="btn">View</a>
+      </li>
+      <li style="color: white;">
+        Google IT Support Professional Certificate by Coursera & Google
+        <a href="https://www.coursera.org/account/accomplishments/professional-cert/K8YK5RU3RU8Y" target="_blank" rel="noopener noreferrer" class="btn">View</a>
+      </li>
+      <li style="color: white;">
+        CCNA: Switching, Routing, and Wireless Essentials by Cisco
+        <a href="https://www.credly.com/badges/eb5f90c6-6103-498a-82b9-6e4a53c2d05e" target="_blank" rel="noopener noreferrer" class="btn">View</a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- About Me Section (hidden by default) -->
+<section id="about-section" style="display:none;">
+  <button class="close-btn" aria-label="Close About Section">×</button>
+  <div class="about-container">
+    <h2><i class="fa-solid fa-user"></i> About Me</h2>
+    <p>
+      I am Tarek Zeri, a 25-year-old Algerian professional with a Bachelor’s Degree in Computer Science,
+      currently pursuing a Master’s in Data Engineering and Web Technologies (IDTW) while working as an
+      ERP Deployment Consultant. I specialize in deployment, configuration, and ERP user training.
+    </p>
+  </div>
+</section>
+
+<!-- Projects & Experience Section (hidden by default) -->
+<section id="projects-section" style="display:none;">
+  <button class="close-btn" aria-label="Close Projects Section">×</button>
+  <div class="projects-container">
+    <h2><i class="fa-solid fa-briefcase"></i> Projects & Experience</h2>
+    <p>
+      From December 2022, I worked as an IT Intern at SAMHA SPA (Brandt). In March 2023, I joined
+      EURL SATEREX (IRIS) assisting in Sage X3 ERP. Since May 2024, I have been working as an ERP
+      Deployment Consultant, installing and configuring software and training clients.
+    </p>
+  </div>
+</section>
+
+<script>
+    let btnMenu = document.getElementById("btnMenu");
+    let Navlinks = document.querySelector(".links");
+    let contactSection = document.getElementById('contact-section');
+    let formationSection = document.getElementById('formation-section');
+    let aboutSection = document.getElementById('about-section');
+    let projectsSection = document.getElementById('projects-section');
+
+    btnMenu.onclick = function () {
+        btnMenu.classList.toggle("fa-times");
+        Navlinks.classList.toggle("active");
+
+        let homeLink = document.querySelector('.links li.active a');
+        if (Navlinks.classList.contains("active") && window.innerWidth <= 980) {
+            if (homeLink && homeLink.textContent.trim().toUpperCase() === "HOME") {
+                homeLink.textContent = "MENU";
+            }
+        } else {
+            if (homeLink && homeLink.textContent.trim().toUpperCase() === "MENU") {
+                homeLink.textContent = "HOME";
+            }
+        }
+
+        if (!Navlinks.classList.contains("active")) {
+            if (contactSection.style.display === 'block') contactSection.style.display = 'none';
+            if (formationSection.style.display === 'block') formationSection.style.display = 'none';
+            if (aboutSection.style.display === 'block') aboutSection.style.display = 'none';
+            if (projectsSection.style.display === 'block') projectsSection.style.display = 'none';
+        }
+    }
+</script>
+<script src="js/menu.js"></script>
+
+</body>
+</html>

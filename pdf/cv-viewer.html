@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Viewer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background: #222;
+            color: goldenrod;
+        }
+        .btn {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        iframe {
+            width: 100%;
+            height: 80vh;
+            border: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>View or Download My CV</h1>
+    <a href="cv-english.pdf" target="_blank" class="btn">CV in English</a>
+    <a href="cv-french.pdf" target="_blank" class="btn">CV in French</a>
+
+    <iframe id="cv-viewer" src="cv-english.pdf"></iframe>
+
+    <script>
+        const englishBtn = document.querySelector('a[href="cv-english.pdf"]');
+        const frenchBtn = document.querySelector('a[href="cv-french.pdf"]');
+        const iframe = document.getElementById('cv-viewer');
+
+        englishBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            iframe.src = 'cv-english.pdf';
+        });
+
+        frenchBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            iframe.src = 'cv-french.pdf';
+        });
+    </script>
+</body>
+</html>
